@@ -53,7 +53,7 @@ class PassDiffuser {
 		}
 
 		//find the max items
-		const max_items = 0
+		let max_items = 0
 		for (let cnt = 0; cnt < this.char_set.length; cnt++) {
 			if (diffusion_dictionary[this.char_set[cnt]].length > max_items) {
 				max_items = diffusion_dictionary[this.char_set[cnt]].length
