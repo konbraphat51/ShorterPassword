@@ -2,7 +2,7 @@ class PassDiffuser {
 	//a-z + A-Z + 0-9
 	char_set = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
-	diffuse(original_text, altered_text) {
+	Diffuse(original_text, altered_text) {
 		const remaining_chars = 5
 
 		const per_char = Math.floor(original_text.length / altered_text.length)
