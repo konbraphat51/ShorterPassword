@@ -5,28 +5,21 @@ class PassDiffuser {
 	Diffuse(original_text, altered_text) {
 		const remaining_chars = 5
 
-		const per_char = Math.floor(original_text.length / altered_text.length)
+		const per_char = Math.ceil(original_text.length / altered_text.length)
 		const remaining = original_text.length % altered_text.length
 
 		//seperate
 		let original_seperated = []
-		for (
-			let cnt = 0;
-			cnt < Math.floor(original_text.length / per_char);
-			cnt++
-		) {
+		while (original_text.length > 0) {
 			original_seperated.push(
-				original_text.slice(cnt * per_char, (cnt + 1) * per_char),
+				original_text.substring(0, Math.min(per_char, original_text.length)),
+			)
+			original_text = original_text.substring(
+				Math.min(per_char, original_text.length),
 			)
 		}
 
-		let remainer = original_text.slice(
-			original_seperated.length * per_char,
-			original_text.length,
-		)
-		if (remainer != "") {
-			original_seperated.push(remainer)
-		}
+		console.log(original_seperated)
 
 		//create diffusion dictionary
 		let diffusion_dictionary = {}
