@@ -13,7 +13,7 @@
 		<input type="text" id="altered" />
 
 		<h2>diffused</h2>
-		<input type="text" id="diffused" />
+		<textarea id="diffused">
 
 		<button onclick="diffuse()">Diffuse</button>
 	</body>
@@ -93,6 +93,9 @@
 				}
 			}
 			//<<fill data
+
+            //output
+            diffused.value = JSON.stringify(diffusion_dictionary)
 		}
 
 		function compute_random_string(length) {
