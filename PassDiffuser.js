@@ -19,12 +19,13 @@ class PassDiffuser {
 				original_text.slice(cnt * per_char, (cnt + 1) * per_char),
 			)
 		}
-		original_seperated.push(
-			original_text.slice(
-				original_seperated.length * per_char,
-				original_text.length,
-			),
+		let remainer = original_text.slice(
+			original_seperated.length * per_char,
+			original_text.length,
 		)
+		if (remainer != undefined) {
+			original_seperated.push(remainer)
+		}
 
 		//create diffusion dictionary
 		let diffusion_dictionary = {}
@@ -35,7 +36,7 @@ class PassDiffuser {
 		//correct data
 		for (
 			let cnt_original = 0;
-			cnt_original < original_seperated.length;
+			cnt_original < altered_text.length;
 			cnt_original++
 		) {
 			diffusion_dictionary[altered_text[cnt_original]].push(
