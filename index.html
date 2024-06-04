@@ -39,10 +39,32 @@
 					original_text.slice(cnt * per_char, (cnt + 1) * per_char),
 				)
 			}
-			let remaining_text = original_text.slice(
-				original_seperated.length * per_char,
-				original_text.length,
+			original_seperated.push(
+				original_text.slice(
+					original_seperated.length * per_char,
+					original_text.length,
+				),
 			)
+
+			//a-z + A-Z + 0-9
+			const char_set =
+				"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+			//create diffusion dictionary
+			let diffusion_dictionary = {}
+			for (let cnt = 0; cnt < char_set.length; cnt++) {
+				diffusion_dictionary[char_set[cnt]] = []
+			}
+
+			for (
+				let cnt_original = 0;
+				cnt_original < original_seperated.length;
+				cnt_original++
+			) {
+				diffusion_dictionary[altered_text[cnt_original]].push(
+					original_seperated[cnt_original],
+				)
+			}
 		}
 	</script>
 </html>
