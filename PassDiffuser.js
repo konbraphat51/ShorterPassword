@@ -28,8 +28,6 @@ class PassDiffuser {
 			original_seperated.push(remainer)
 		}
 
-		console.log(original_seperated)
-
 		//create diffusion dictionary
 		let diffusion_dictionary = {}
 		for (let cnt = 0; cnt < this.char_set.length; cnt++) {
