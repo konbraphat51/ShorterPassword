@@ -19,13 +19,16 @@ class PassDiffuser {
 				original_text.slice(cnt * per_char, (cnt + 1) * per_char),
 			)
 		}
+
 		let remainer = original_text.slice(
 			original_seperated.length * per_char,
 			original_text.length,
 		)
-		if (remainer != undefined) {
+		if (remainer != "") {
 			original_seperated.push(remainer)
 		}
+
+		console.log(original_seperated)
 
 		//create diffusion dictionary
 		let diffusion_dictionary = {}
