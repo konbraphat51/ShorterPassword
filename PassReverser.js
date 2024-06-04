@@ -3,7 +3,10 @@ class PassReverser {
 	 * @param {object} diffused diffusion dictionary
 	 */
 	constructor(diffused) {
-		this.diffused = diffused
+		const json_raw = atob(diffused)
+		const dictionary = JSON.parse(json_raw)
+
+		this.diffused = dictionary
 	}
 
 	Reverse(input) {

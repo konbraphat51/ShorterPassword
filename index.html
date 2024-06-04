@@ -31,9 +31,9 @@
 			const diffused = document.getElementById("diffused")
 
 			const diffuser = new PassDiffuser()
-			const diffused_json = diffuser.Diffuse(original_text, altered_text)
+			const diffused_code = diffuser.Diffuse(original_text, altered_text)
 
-			diffused.value = JSON.stringify(diffused_json, null, 4)
+			diffused.value = diffused_code
 		}
 	</script>
 </html>

@@ -69,7 +69,9 @@ class PassDiffuser {
 		//<<fill data
 
 		//output
-		return diffusion_dictionary
+		const json_string = JSON.stringify(diffusion_dictionary)
+		const base64_string = btoa(json_string)
+		return base64_string
 	}
 
 	#ComputeRandomString(length) {

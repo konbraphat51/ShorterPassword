@@ -10,13 +10,13 @@
 		<input type="password" id="original" />
 
 		<h2>diffusion</h2>
-		<textarea id="diffusion"> </textarea>
+		<textarea id="diffusion"></textarea>
 
 		<br />
 		<button onclick="Reverse()">Reverse</button>
 
 		<h2>reversed</h2>
-		<textarea id="reversed"> </textarea>
+		<textarea id="reversed"></textarea>
 
 		<br />
 		<a href="./index.html">Diffuse</a>
@@ -26,8 +26,7 @@
 	<script>
 		function Reverse() {
 			const original_text = document.getElementById("original").value
-			const diffusion_text = document.getElementById("diffusion").value
-			const diffusion = JSON.parse(diffusion_text)
+			const diffusion = document.getElementById("diffusion").value
 			const reversed = document.getElementById("reversed")
 
 			const reverser = new PassReverser(diffusion)
