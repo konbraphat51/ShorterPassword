@@ -18,4 +18,19 @@
 		<h2>reversed</h2>
 		<textarea id="reversed"> </textarea>
 	</body>
+
+	<script src="./PassReverser.js"></script>
+	<script>
+		function Reverse() {
+			const original_text = document.getElementById("original").value
+			const diffusion_text = document.getElementById("diffusion").value
+			const diffusion = JSON.parse(diffusion_text)
+			const reversed = document.getElementById("reversed")
+
+			const reverser = new PassReverser()
+			const reversed_text = reverser.Reverse(original_text, diffusion)
+
+			reversed.value = reversed_text
+		}
+	</script>
 </html>
