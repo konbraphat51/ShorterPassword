@@ -19,7 +19,7 @@ class PassDiffuser {
 		}
 
 		//remaining
-		if (original_seperated.length > altered_text.length) {
+		while (original_seperated.length > altered_text.length) {
 			let last = original_seperated.pop()
 			original_seperated[original_seperated.length - 1] += last
 		}
