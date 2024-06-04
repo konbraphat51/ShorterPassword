@@ -27,8 +27,8 @@
 			const diffusion = JSON.parse(diffusion_text)
 			const reversed = document.getElementById("reversed")
 
-			const reverser = new PassReverser()
-			const reversed_text = reverser.Reverse(original_text, diffusion)
+			const reverser = new PassReverser(diffusion)
+			const reversed_text = reverser.Reverse(original_text)
 
 			reversed.value = reversed_text
 		}
