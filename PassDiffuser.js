@@ -24,8 +24,6 @@ class PassDiffuser {
 			original_seperated[original_seperated.length - 1] += last
 		}
 
-		console.log(original_seperated)
-
 		//create diffusion dictionary
 		let diffusion_dictionary = {}
 		for (let cnt = 0; cnt < this.char_set.length; cnt++) {
