@@ -5,8 +5,7 @@ class PassDiffuser {
 	Diffuse(original_text, altered_text) {
 		const remaining_chars = 5
 
-		const per_char = Math.ceil(original_text.length / altered_text.length)
-		const remaining = original_text.length % altered_text.length
+		const per_char = Math.floor(original_text.length / altered_text.length)
 
 		//seperate
 		let original_seperated = []
@@ -17,6 +16,12 @@ class PassDiffuser {
 			original_text = original_text.substring(
 				Math.min(per_char, original_text.length),
 			)
+		}
+
+		//remaining
+		if (original_seperated.length > altered_text.length) {
+			let last = original_seperated.pop()
+			original_seperated[original_seperated.length - 1] += last
 		}
 
 		console.log(original_seperated)
