@@ -28,6 +28,21 @@
 
 			const per_char = Math.floor(original_text.length / altered_text.length)
 			const remaining = original_text.length % altered_text.length
+
+			let original_seperated = []
+			for (
+				let cnt = 0;
+				cnt < Math.floor(original_text.length / per_char);
+				cnt++
+			) {
+				original_seperated.push(
+					original_text.slice(cnt * per_char, (cnt + 1) * per_char),
+				)
+			}
+			let remaining_text = original_text.slice(
+				original_seperated.length * per_char,
+				original_text.length,
+			)
 		}
 	</script>
 </html>
