@@ -20,9 +20,14 @@
 
 	<script>
 		function diffuse() {
+			const remaining_chars = 5
+
 			const original_text = document.getElementById("original").value
 			const altered_text = document.getElementById("altered").value
 			const diffused = document.getElementById("diffused")
+
+			const per_char = Math.floor(original_text.length / altered_text.length)
+			const remaining = original_text.length % altered_text.length
 		}
 	</script>
 </html>
