@@ -67,6 +67,41 @@
 					original_seperated[cnt_original],
 				)
 			}
+
+			//>>fill data
+			//fill the remaining length
+			for (let cnt = 0; cnt < remaining_chars; cnt++) {
+				diffusion_dictionary[altered_text[cnt]].push(
+					compute_random_string(remaining),
+				)
+			}
+
+			//find the max items
+			const max_items = 0
+			for (let cnt = 0; cnt < char_set.length; cnt++) {
+				if (diffusion_dictionary[char_set[cnt]].length > max_items) {
+					max_items = diffusion_dictionary[char_set[cnt]].length
+				}
+			}
+
+			//fill all lists
+			for (let cnt = 0; cnt < char_set.length; cnt++) {
+				let current_list = diffusion_dictionary[char_set[cnt]]
+
+				while (current_list.length < max_items) {
+					current_list.push(compute_random_string(per_char))
+				}
+			}
+			//<<fill data
+		}
+
+		function compute_random_string(length) {
+			let result = ""
+			const charactersLength = char_set.length
+			for (let cnt = 0; cnt < length; cnt++) {
+				result += char_set.charAt(Math.floor(Math.random() * charactersLength))
+			}
+			return result
 		}
 	</script>
 </html>
