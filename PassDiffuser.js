@@ -47,7 +47,7 @@ class PassDiffuser {
 		//fill the remaining length
 		for (let cnt = 0; cnt < remaining_chars; cnt++) {
 			diffusion_dictionary[altered_text[cnt]].push(
-				this.#compute_random_string(remaining),
+				this.#ComputeRandomString(remaining),
 			)
 		}
 
@@ -64,7 +64,7 @@ class PassDiffuser {
 			let current_list = diffusion_dictionary[this.char_set[cnt]]
 
 			while (current_list.length < max_items) {
-				current_list.push(this.#compute_random_string(per_char))
+				current_list.push(this.#ComputeRandomString(per_char))
 			}
 		}
 		//<<fill data
@@ -73,7 +73,7 @@ class PassDiffuser {
 		return diffusion_dictionary
 	}
 
-	#compute_random_string(length) {
+	#ComputeRandomString(length) {
 		let result = ""
 		const charactersLength = this.char_set.length
 		for (let cnt = 0; cnt < length; cnt++) {
