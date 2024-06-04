@@ -44,10 +44,11 @@ class PassDiffuser {
 		}
 
 		//>>fill data
-		//fill the remaining length
+		//fill with the last length
+		const length_last = original_seperated[original_seperated.length - 1].length
 		for (let cnt = 0; cnt < remaining_chars; cnt++) {
 			diffusion_dictionary[altered_text[cnt]].push(
-				this.#ComputeRandomString(remaining),
+				this.#ComputeRandomString(length_last),
 			)
 		}
 
