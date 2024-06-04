@@ -19,6 +19,10 @@
 	</body>
 
 	<script>
+		//a-z + A-Z + 0-9
+		const char_set =
+			"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
 		function diffuse() {
 			const remaining_chars = 5
 
@@ -46,10 +50,6 @@
 					original_text.length,
 				),
 			)
-
-			//a-z + A-Z + 0-9
-			const char_set =
-				"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 			//create diffusion dictionary
 			let diffusion_dictionary = {}
