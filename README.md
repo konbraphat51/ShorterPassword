@@ -8,7 +8,7 @@ Use this to make your crazy long API token to a specific password **without hard
 
 ## Usage
 ### Making Open key
-- Use this website (totally offline): https://konbraphat51.github.io/PassDiffuser/
+- Use this website (totally offline): https://konbraphat51.github.io/ShorterPassword
 - Or you can use [this class](./PassDiffuser.js) locally
 
 **altered text** is your secret password
